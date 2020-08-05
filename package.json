@@ -1,0 +1,26 @@
+{
+  "name": "node-api",
+  "version": "1.0.0",
+  "description": "system Test task",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ragasrm/ms-systemTest-nodeJS.git"
+  },
+  "author": "Ragav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ragasrm/ms-systemTest-nodeJS/issues"
+  },
+  "homepage": "https://github.com/Ragasrm/ms-systemTest-nodeJS#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "mongodb": "^3.6.0",
+    "uuid": "^8.3.0"
+  }
+}
