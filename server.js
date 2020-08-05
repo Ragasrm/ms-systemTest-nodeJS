@@ -7,9 +7,13 @@ const db = require('./app/dbConnection/Connection')
 // Middlewares
 app.use(cors())
 app.use(express.json())
+
 // Main Route for centre
 const product = require('./app/router/product')
-app.use('/api/v1/product/', product)
+app.use('/api/v1/product', product)
+
+const customer = require('./app/router/customer')
+app.use('/api/v1/customer', customer)
 
 db.initConnection()
   .then(() => {
