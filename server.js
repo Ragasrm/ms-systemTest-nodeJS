@@ -12,8 +12,8 @@ app.use(express.json())
 const product = require('./app/router/product')
 app.use('/api/v1/product', product)
 
-const customer = require('./app/router/customer')
-app.use('/api/v1/customer', customer)
+const user = require('./app/router/user')
+app.use('/api/v1/user', user)
 
 db.initConnection()
   .then(() => {
