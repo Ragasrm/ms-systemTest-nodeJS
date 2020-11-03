@@ -9,8 +9,7 @@ app.use(cors())
 app.use(express.json())
 
 // Main Route for centre
-const product = require('./app/router/product')
-app.use('/api/v1/product', product)
+
 
 const user = require('./app/router/user')
 app.use('/api/v1/user', user)
