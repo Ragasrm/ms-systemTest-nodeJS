@@ -4,7 +4,7 @@ module.exports = {
     save: async (data)=> {
 
       const checkUserAvailability = await dao.checkUserAvailability(data.email);
-      console.log('checkUserAvailability=>', checkUserAvailability)
+     
       if (checkUserAvailability.length > 0) {
         return {
           success:false,
@@ -16,7 +16,7 @@ module.exports = {
 
     authenticate: async (creds) => {     
         const credentials = await dao.findByCredentials(creds);
-        console.log('credentialscredentials==>', credentials)
+      
         if (credentials.length > 0) {
           return {
             success:true,
@@ -26,6 +26,11 @@ module.exports = {
         } 
         return false;
       },
+
+    getUser: async() => {
+      return dao.userList()
+
+    }
 }
 
    

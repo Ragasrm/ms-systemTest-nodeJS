@@ -12,6 +12,11 @@ module.exports = {
         return await collection.insertOne(data)
    },
 
+   userList: async()=>{
+    const collection = db.getdb().collection(_UserCollection);
+    return await collection.find({},{projection: {firstName:1,gender:1,email:1,country:1}}).toArray();
+   },
+
    findByCredentials: async ({ username, password }) => {
       
     const collection = db.getdb().collection(_UserCollection);

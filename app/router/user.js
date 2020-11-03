@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
   })
 
   router.post("/authenticate", (req, res) => {
-    console.log('req.body==>', req.body)
+   
     service
       .authenticate(req.body)
       .then((data) => {
@@ -43,6 +43,28 @@ router.post('/', (req, res) => {
         res.send(err);
       });
   });
+
+
+  router.get("/", (req, res) =>{
+    service.getUser().then((data)=>{
+      if(data.length > 0){
+        res.status(200).send({
+          success: true,
+          data: data
+        })
+
+      } else {
+        res.status(404).send({
+          success: false,
+          message: "No data found"
+        })
+
+      }
+   
+    }).catch(err=>{
+      res.status(500).send({message:err.message});
+    })
+  })
 
 
   module.exports = router
