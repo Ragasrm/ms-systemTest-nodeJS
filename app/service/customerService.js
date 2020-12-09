@@ -7,6 +7,7 @@ module.exports = {
 
     authenticate: async (creds) => {
         const credentials = await dao.findByCredentials(creds);
+        console.log('credentials',credentials)
         if (credentials.length > 0) {
           return {
             success:true,

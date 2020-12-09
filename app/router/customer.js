@@ -22,6 +22,7 @@ router.post('/', (req, res) => {
   })
 
   router.post("/authenticate", (req, res) => {
+    console.log('req.body', req.body)
     service
       .authenticate(req.body)
       .then((data) => {
